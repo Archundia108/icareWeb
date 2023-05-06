@@ -1,0 +1,26 @@
+.icare-header{
+    width: 100%;
+    height: 48px;
+    display: flex;
+    white-space: nowrap;
+    background-color: #008dda!important;
+    z-index: 3001!important;
+    position: fixed;
+}
+
+.icare-header-right{
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding-right: 18px;
+}
+
+.full-text-search-header{
+    padding: 0 7px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    background-color: #029de0!important;
+    white-space: nowrap;
+    display: flex!important;
+    margin-right: 8px;
+}
