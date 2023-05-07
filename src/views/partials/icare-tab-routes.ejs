@@ -1,10 +1,74 @@
 <style>
     .icare-tab-manager{
+        display: inline-flex;
         background-color: #e2e4ea;
         height: 48px;
         width: 100%;
+        padding-left: 12px;
     }
+
+    .icare-tab{
+        padding: 5px 5px 5px 5px;
+        color: grey;
+        background-color: transparent;
+        height: 48px;
+        max-width: 155px;
+        display: flex;
+        align-items: center;
+        border: none;
+        margin-right: 15px;
+    }
+
+    .icare-tab.active{
+        border-top: 3px solid #e2e4ea;
+        font-weight: 700;
+        color: #008dda;
+        border-bottom: 3px solid #008dda;
+    }
+
+    .icare-tab.mouseover{
+        background-color: white;
+    }
+
+    .icare-tab-text{
+        justify-content: start;
+        max-width: 140px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding-right: 5px;
+    }
+
 </style>
 <div class="icare-tab-manager">
-desfsefg
+    <button class="icare-tab active">
+        <span class="icare-tab-text">UWQ-Universal Work Queue</span>
+        <i class="fa-solid fa-xmark tab-close-icon"></i>
+    </button>
+    <button class="icare-tab">
+        <span class="icare-tab-text">12121212</span>
+        <i class="fa-solid fa-xmark tab-close-icon"></i>
+    </button>
+    <button class="icare-tab">
+        <span class="icare-tab-text">12121212</span>
+        <i class="fa-solid fa-xmark tab-close-icon"></i>
+    </button>
 </div>
+
+<script>
+    const tabs = document.querySelectorAll('.icare-tab');
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('mouseover', () => {
+            tabs.forEach(tab => {tab.classList.remove('mouseover')});
+            tab.classList.add('mouseover');
+        });
+        tab.addEventListener('mouseout', () => {
+            tabs.forEach(tab => {tab.classList.remove('mouseover')});
+        });
+        tab.addEventListener('click', () => {
+            tabs.forEach(tab => {tab.classList.remove('active')});
+            tab.classList.add('active');
+        });
+    });
+</script>
