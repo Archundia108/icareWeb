@@ -1,32 +1,211 @@
-<nav class="navbar fixed-top" style="background-color: #008dda; height: 48px;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">iCare+</a>
-        <form role="search" class="d-flex">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        color: f2f2f2;
+        box-sizing: border-box;
+        font-family: Helvetica, Arial, microsoft yahei;
+        font-size: 12px;
+    }
+    nav{
+        background-color: #008dda;
+        height: 48px;
+        border-right: none;
+        border-left: none;
+    }
 
-            
-            
-            <div class="input-group mb-3">
-                <span class="input-group-text" style="background-color: #029de9;" id="basic-addon1"><i class="fa fa-phone"></i></span>
-                <input id="SR" name="SR" type="search" class="form-control me-2" style="border-radius: 15px; background-color: #029de9; font-size: 12px; border: 0; height: 30px;" placeholder="Full text Search for SR">
+    nav ul{
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav ul li.icare-menu{
+        flex: 1;
+        margin-right: 12px;
+        color: white;
+        cursor: pointer;
+    }
+
+    nav ul li.icare-logo{
+        flex: 1;
+        font-size: 30px;
+        font-weight: 700;
+        color: white;
+        cursor: pointer;
+    }
+
+    nav ul div.items{
+        margin-left: 300px;
+        display: inline-flex;
+        padding: 0 12px;
+    }
+
+    nav ul div.items li.margin{
+        margin-left: 12px;
+    }
+
+    nav ul div.items form.icare-form{
+        background-color: #029de9;
+        border-radius: 15px;
+        position: relative;
+        height: 30px;
+    }
+
+    nav ul div.items form.icare-form input{
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 15px;
+        border: none;
+        background-color: transparent;
+        padding: 8px 30px 8px 20px;
+        color: white;
+    }
+
+    nav ul div.items form.icare-form select{
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 15px;
+        border: none;
+        background-color: transparent;
+        padding: 8px 30px 8px 20px;
+        color: white;
+        -webkit-appearance: none;
+    }
+
+    nav ul div.items form.icare-form select:focus{
+        outline: none;
+    }
+
+    nav ul div.items form.icare-form input::placeholder{
+        color: white;
+        font-size: 12px;
+    }
+
+    nav ul div.items form.icare-form input:focus{
+        outline: none;
+    }
+
+    nav ul div.items form.icare-form button{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        color: white;
+    }
+
+    nav ul div.items li.margin div.icare-agent{
+        position: absolute;
+        align-items: center;
+        background-color: white;
+        border-radius: 40px;
+        height: 40px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 16);
+        margin-top: -4px;
+        padding-right: 12px;
+    }
+
+    nav ul div.items li.margin button.icare-profile{
+        /* position: fixed; */
+        border: none;
+        margin-right: 130px;
+        width: 30px;
+        justify-content: center;
+        align-items: center;
+        background-color: grey;
+        border-radius: 50px;
+        height: 30px;
+        /* margin: 0px 0px 2px 5px; */
+    }
+
+    nav ul div.items li.margin div.icare-agent button.icare-agent-button{
+        justify-content: center;
+        align-items: center;
+        margin: 5px 0px 2px 5px;
+        color: white;
+        border-radius: 40px;
+        height: 30px;
+        width: 30px;
+        border: none;
+    }
+
+</style>
+    <nav>
+        <ul>
+            <li class="icare-menu">
+                <i class="fa-xl fa-solid fa-bars"></i>
+            </li>
+            <li class="icare-logo">iCare+</li>
+            <div class="items">
+                <li class="margin">
+                    <form class="icare-form">
+                        <input type="text" placeholder="Full Text Search For SR">
+                        <button type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </li>
+                <li class="margin">
+                    <form class="icare-form">
+                        <input type="text" placeholder="SR No.">
+                        <button type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </li>
+                <li class="margin" style="margin-top: 9px; color: white;">
+                    <i class="fa-solid fa-bars-staggered fa-2xl" style="cursor: pointer;"></i>
+                </li>
+                <li class="margin">
+                    <div class="icare-agent">
+                        <button class="icare-agent-button fa-xl" style="background-color: #008dda;">
+                            <i class="fa-solid fa-comment"></i>
+                        </button>
+                        <button class="icare-agent-button fa-xl" style="background-color: #54cf68;">
+                            <i class="fa-solid fa-phone"></i>
+                        </button>
+                        <button class="icare-agent-button fa-xl" style="background-color: #008dda;">
+                            <i class="fa-solid fa-envelope"></i>
+                        </button>
+                        <a style="padding-left: 12px;">
+                            Not Check In
+                            <i class="fa-solid fa-chevron-down" style="cursor: pointer;"></i>
+                        </a>
+                    </div>
+                </li>
+                <li class="margin" style="padding-left: 220px;">
+                    <form class="icare-form" style="margin-left: 30px; border-left: 0px;">
+                        <Select>
+                            <option selected>HW_Carrier_CSE</option>
+                        </Select>
+                        <button class="icare-agent-button fa-xl" >
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <button class="icare-profile">
+                            <i class="fa-solid fa-user fa-xl"></i>
+                        </button>
+                    </form>
+                </li>
+                <li class="margin" style="padding-left: 10px; margin-top: 8px;">
+                    <span>
+                        <i class="fa-regular fa-square-check fa-2xl" style="color: #f9e477;"></i>
+                        <a style="color: #f9e477; font-size: 12px;">To Do</a>
+                    </span>
+                </li>
+                <li class="margin" style="padding-left: 10px; margin-top: 8px;">
+                    <i class="fa-regular fa-bell fa-lg" style="color: white;"></i>
+                    <i class="fa-regular fa-comment-dots fa-lg" style="color: white; padding-left: 4px;"></i>
+                    <i class="fa-regular fa-circle-question fa-lg" style="color: white; padding-left: 4px;"></i>
+                </li>
             </div>
-
-            <div>
-                <div style="height: 30px;">style="border-radius: 15px; background-color: #029de9; font-size: 12px; border: 0; height: 30px;"style="border-radius: 15px; background-color: #029de9; font-size: 12px; border: 0; height: 30px;"
-                    <select class="form-select">
-                        <option selected>SR</option>
-                        <option>RFC</option>
-                        <option>FKJDSAHF</option>
-                    </select>
-                </div>
-            </div>
-        </form>
-    </div>
-</nav> 
-
-<!-- <div class="icare-header">
-    <div class="icare-header-right">
-        <div class="full-text-search-header">
-
-        </div>
-    </div>
-</div> -->
+        </ul>
+    </nav>
