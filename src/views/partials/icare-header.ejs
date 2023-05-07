@@ -23,8 +23,7 @@
     }
 
     nav ul li.icare-menu{
-        flex: 1;
-        margin-right: 12px;
+        padding-right: 12px;
         color: white;
         cursor: pointer;
     }
@@ -137,75 +136,74 @@
         width: 30px;
         border: none;
     }
-
 </style>
-    <nav>
-        <ul>
-            <li class="icare-menu">
-                <i class="fa-xl fa-solid fa-bars"></i>
+<nav>
+    <ul>
+        <li class="icare-menu">
+            <i class="fa-xl fa-solid fa-bars"></i>
+        </li>
+        <li class="icare-logo">iCare+</li>
+        <div class="items">
+            <li class="margin">
+                <form class="icare-form">
+                    <input type="text" placeholder="Full Text Search For SR">
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
             </li>
-            <li class="icare-logo">iCare+</li>
-            <div class="items">
-                <li class="margin">
-                    <form class="icare-form">
-                        <input type="text" placeholder="Full Text Search For SR">
-                        <button type="submit">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </form>
-                </li>
-                <li class="margin">
-                    <form class="icare-form">
-                        <input type="text" placeholder="SR No.">
-                        <button type="submit">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </form>
-                </li>
-                <li class="margin" style="margin-top: 9px; color: white;">
-                    <i class="fa-solid fa-bars-staggered fa-2xl" style="cursor: pointer;"></i>
-                </li>
-                <li class="margin">
-                    <div class="icare-agent">
-                        <button class="icare-agent-button fa-xl" style="background-color: #008dda;">
-                            <i class="fa-solid fa-comment"></i>
-                        </button>
-                        <button class="icare-agent-button fa-xl" style="background-color: #54cf68;">
-                            <i class="fa-solid fa-phone"></i>
-                        </button>
-                        <button class="icare-agent-button fa-xl" style="background-color: #008dda;">
-                            <i class="fa-solid fa-envelope"></i>
-                        </button>
-                        <a style="padding-left: 12px;">
-                            Not Check In
-                            <i class="fa-solid fa-chevron-down" style="cursor: pointer;"></i>
-                        </a>
-                    </div>
-                </li>
-                <li class="margin" style="padding-left: 220px;">
-                    <form class="icare-form" style="margin-left: 30px; border-left: 0px;">
-                        <Select>
-                            <option selected>HW_Carrier_CSE</option>
-                        </Select>
-                        <button class="icare-agent-button fa-xl" >
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </button>
-                        <button class="icare-profile">
-                            <i class="fa-solid fa-user fa-xl"></i>
-                        </button>
-                    </form>
-                </li>
-                <li class="margin" style="padding-left: 10px; margin-top: 8px;">
-                    <span>
-                        <i class="fa-regular fa-square-check fa-2xl" style="color: #f9e477;"></i>
-                        <a style="color: #f9e477; font-size: 12px;">To Do</a>
-                    </span>
-                </li>
-                <li class="margin" style="padding-left: 10px; margin-top: 8px;">
-                    <i class="fa-regular fa-bell fa-lg" style="color: white;"></i>
-                    <i class="fa-regular fa-comment-dots fa-lg" style="color: white; padding-left: 4px;"></i>
-                    <i class="fa-regular fa-circle-question fa-lg" style="color: white; padding-left: 4px;"></i>
-                </li>
-            </div>
-        </ul>
-    </nav>
+            <li class="margin">
+                <form class="icare-form">
+                    <input type="text" placeholder="SR No.">
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </li>
+            <li class="margin" style="margin-top: 9px; color: white;">
+                <i class="fa-solid fa-bars-staggered fa-2xl" style="cursor: pointer;"></i>
+            </li>
+            <li class="margin">
+                <div class="icare-agent">
+                    <button class="icare-agent-button fa-xl" style="background-color: #008dda;">
+                        <i class="fa-solid fa-comment"></i>
+                    </button>
+                    <button class="icare-agent-button fa-xl" style="background-color: #54cf68;">
+                        <i class="fa-solid fa-phone"></i>
+                    </button>
+                    <button class="icare-agent-button fa-xl" style="background-color: #008dda;">
+                        <i class="fa-solid fa-envelope"></i>
+                    </button>
+                    <a style="padding-left: 12px;">
+                        Not Check In
+                        <i class="fa-solid fa-chevron-down" style="cursor: pointer;"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="margin" style="padding-left: 220px;">
+                <form class="icare-form" style="margin-left: 30px; border-left: 0px;">
+                    <Select>
+                        <option selected>HW_Carrier_CSE</option>
+                    </Select>
+                    <button class="icare-agent-button fa-xl" >
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <button class="icare-profile">
+                        <i class="fa-solid fa-user fa-xl"></i>
+                    </button>
+                </form>
+            </li>
+            <li class="margin" style="padding-left: 10px; margin-top: 8px;">
+                <span>
+                    <i class="fa-regular fa-square-check fa-2xl" style="color: #f9e477;"></i>
+                    <a style="color: #f9e477; font-size: 12px;">To Do</a>
+                </span>
+            </li>
+            <li class="margin" style="padding-left: 10px; margin-top: 8px;">
+                <i class="fa-regular fa-bell fa-lg" style="color: white;"></i>
+                <i class="fa-regular fa-comment-dots fa-lg" style="color: white; padding-left: 4px;"></i>
+                <i class="fa-regular fa-circle-question fa-lg" style="color: white; padding-left: 4px;"></i>
+            </li>
+        </div>
+    </ul>
+</nav>
