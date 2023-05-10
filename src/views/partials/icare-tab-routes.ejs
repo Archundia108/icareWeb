@@ -1,5 +1,7 @@
 <style>
     .icare-tab-manager{
+        margin-top: -10px;
+        position: fixed;
         display: inline-flex;
         background-color: #e2e4ea;
         height: 48px;
@@ -30,6 +32,10 @@
         background-color: white;
     }
 
+    .icare-tab.none{
+        display: none;
+    }
+
     .icare-tab-text{
         justify-content: start;
         max-width: 140px;
@@ -40,35 +46,15 @@
     }
 
 </style>
-<div class="icare-tab-manager">
-    <button class="icare-tab active">
-        <span class="icare-tab-text">UWQ-Universal Work Queue</span>
-        <i class="fa-solid fa-xmark tab-close-icon"></i>
-    </button>
-    <button class="icare-tab">
-        <span class="icare-tab-text">12121212</span>
-        <i class="fa-solid fa-xmark tab-close-icon"></i>
-    </button>
-    <button class="icare-tab">
-        <span class="icare-tab-text">12121212</span>
-        <i class="fa-solid fa-xmark tab-close-icon"></i>
-    </button>
+<!-- <div class="icare-tab-manager" id="tab-manager">
+
 </div>
+<template id="tab-template">
+    <button class="icare-tab">
+        <span class="icare-tab-text">${item}</span>
+        <i class="fa-solid fa-xmark tab-close-icon"></i>
+    </button>
+</template> -->
 
 <script>
-    const tabs = document.querySelectorAll('.icare-tab');
-
-    tabs.forEach((tab, index) => {
-        tab.addEventListener('mouseover', () => {
-            tabs.forEach(tab => {tab.classList.remove('mouseover')});
-            tab.classList.add('mouseover');
-        });
-        tab.addEventListener('mouseout', () => {
-            tabs.forEach(tab => {tab.classList.remove('mouseover')});
-        });
-        tab.addEventListener('click', () => {
-            tabs.forEach(tab => {tab.classList.remove('active')});
-            tab.classList.add('active');
-        });
-    });
 </script>

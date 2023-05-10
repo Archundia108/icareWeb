@@ -11,9 +11,13 @@
     
     nav{
         background-color: #008dda;
+        width: 100%;
         height: 48px;
+        border-bottom: none;
         border-right: none;
         border-left: none;
+        position: fixed;
+        z-index: 9999;
     }
 
     nav ul{
@@ -208,4 +212,13 @@
             </li>
         </div>
     </ul>
+    <div class="icare-tab-manager" id="tab-manager">
+
+    </div>
+    <template id="tab-template">
+        <button class="icare-tab">
+            <span class="icare-tab-text">${item}</span>
+            <i class="fa-solid fa-xmark tab-close-icon"></i>
+        </button>
+    </template>
 </nav>

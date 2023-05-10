@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-family: Helvetica, Arial, microsoft yahei; font-size: 12px;">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,15 +17,96 @@
     <title>iCare+</title>
     <style>
         html, body {
-    margin: 0;
-    height: 100%;
-}
+            margin: 0;
+            height: 100%;
+        }
+
+        body{
+            display: flex;
+            min-height: 100%;
+            flex-direction: column;
+        }
+
+        .content {
+            display :none
+        }
+
+        .content.active {
+            display :block
+        }
     </style>
 </head>
-<body style="font-family: Helvetica, Arial, microsoft yahei; font-size: 12px; background-color: #bfbfbf;">
-    <%- include('./partials/icare-header'); %>
-    <%- include('./partials/icare-tab-routes'); %>
-    <%- include('./partials/main-sr-table'); %>
-
-</body>
+    <body style="background-color: #bfbfbf;">
+        <%- include('./partials/icare-header'); %>
+        <%- include('./partials/icare-tab-routes'); %>
+        <div class="content active h-100" id="icare-tab-content-1" style="padding-top: 88px;">
+            <%- include('./partials/main-sr-table'); %>
+        </div>
+        <div id="icare-tab-content-2" class="content" style="padding-top: 136px;">
+            <%- include('./partials/sr-body.ejs'); %>
+        </div>  
+    </body>
 </html>
+
+<script>
+    const tab_manager = document.querySelector("#tab-manager");
+    const tabs_array = ['UWQ-Universal Work Queue', '12121212'];
+    const template= document.querySelector("#tab-template").content;
+    let i = 0;
+    const fragment = document.createDocumentFragment();
+  
+    const sr_ref = document.querySelector('#icare-sr-ref');
+  
+    sr_ref.addEventListener('click', () => {
+        const UWQ_Universal_page = document.querySelector('#icare-tab-content-1');
+        const sr_page = document.querySelector('#icare-tab-content-2');
+        const activate_tab_1 = document.querySelector('#icare-tab-2');
+        const activate_tab_2 = document.querySelector('#icare-tab-1');
+        activate_tab_1.classList.remove('none');
+        activate_tab_1.classList.add('active');
+        activate_tab_2.classList.remove('active');
+        UWQ_Universal_page.classList.remove('active');
+        sr_page.classList.add('active');
+    });
+  
+    tabs_array.forEach(item => {
+      i++;
+      template.querySelector('.icare-tab span').textContent = item;
+      template.querySelector('.icare-tab').setAttribute('id', 'icare-tab-' + i);
+      if(i == 1){
+        template.querySelector('.icare-tab').classList.add('active');
+      }else{
+        template.querySelector('.icare-tab').classList.remove('active');
+        template.querySelector('.icare-tab').classList.add('none');
+      }
+      const clone = template.cloneNode(true);
+      fragment.appendChild(clone);
+    });
+  
+    tab_manager.appendChild(fragment);
+  
+    for(var t = 1; t <= i; t++){
+        const content = document.querySelector('#icare-tab-content-' + t);
+        const tab = document.querySelector('#icare-tab-' + t);
+        tab.addEventListener('mouseover', () => {
+            for(var t = 1; t <= i; t++){
+            const tab = document.querySelector('#icare-tab-' + t);
+            tab.classList.remove('mouseover')
+            }
+            tab.classList.add('mouseover');
+        });
+        tab.addEventListener('mouseout', () => {
+            tab.classList.remove('mouseover')
+        });
+        tab.addEventListener('click', () => {
+            for(var t = 1; t <= i; t++){
+                const tab = document.querySelector('#icare-tab-' + t);
+                const content = document.querySelector('#icare-tab-content-' + t);
+                tab.classList.remove('active');
+                content.classList.remove('active');
+            }
+            tab.classList.add('active');
+            content.classList.add('active');
+        });
+    }
+  </script>
